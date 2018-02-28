@@ -1,0 +1,9 @@
+/bootstrap
+/vendor
+/.idea
+/.vscode
+/.vagrant
+Homestead.json
+Homestead.yaml
+.env
+.env.example
