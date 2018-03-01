@@ -7,6 +7,13 @@ use Illuminate\Console\Command;
 class ModuleInitCommand extends Command
 {
     /**
+     * The Laravel application instance.
+     *
+     * @var \Illuminate\Foundation\Application
+     */
+    protected $laravel;
+
+    /**
      * The name and signature of the console command.
      *
      * @var string
@@ -20,8 +27,6 @@ class ModuleInitCommand extends Command
      */
     protected $description = 'module init';
 
-    private $modulePath;
-
     /**
      * Create a new command instance.
      *
@@ -34,8 +39,6 @@ class ModuleInitCommand extends Command
 
     /**
      * Execute the console command.
-     *
-     * @return mixed
      */
     public function handle()
     {
@@ -45,29 +48,11 @@ class ModuleInitCommand extends Command
         // 重新配置 composer
         $this->composerRewrite($namespace);
 
-        $src_path = $this->getModulePath('src/');
+        $src_path = $this->laravel->basePath('src/');
         if (!is_dir($src_path)) {
             mkdir($src_path);
         }
         $this->comment("module:init done!");
-    }
-
-    /**
-     * 获取项目目录
-     *
-     * @param string|null $path
-     * @return string
-     */
-    private function getModulePath(string $path = null): string {
-
-        $suffix = ($path ? DIRECTORY_SEPARATOR.$path : $path);
-
-        if ($this->modulePath) {
-            return $this->modulePath . $suffix;
-        }
-        $app_path = $this->getLaravel()->basePath();
-        $module_path = realpath($app_path . '/../');
-        return $this->modulePath = $module_path . $suffix;
     }
 
 
@@ -79,7 +64,7 @@ class ModuleInitCommand extends Command
     private function getModuleNameSpace(): string {
         $namespace = $this->argument('namespace');
         if (is_null($namespace)) {
-            $module_path = $this->getModulePath();
+            $module_path = $this->laravel->basePath();
             $namespace = array_last(explode('/', $module_path));
         }
 
@@ -98,9 +83,11 @@ class ModuleInitCommand extends Command
     }
 
 
+
+
     private function composerRewrite(string $namespace)
     {
-        $composer_file = $this->getModulePath('composer.json');
+        $composer_file = $this->laravel->basePath('composer.json');
 
         $re_str = str_replace(
             '"Module\\\\": "src/"',
