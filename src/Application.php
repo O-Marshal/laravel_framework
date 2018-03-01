@@ -24,12 +24,17 @@ class Application extends LaravelApplication {
 
     public function storagePath()
     {
-        return $this->storagePath ?: $this->basePath.DIRECTORY_SEPARATOR.'bootstrap/storage';
+        return $this->storagePath = $this->basePath.DIRECTORY_SEPARATOR.'bootstrap/storage';
     }
 
     public function resourcePath($path = '')
     {
         return $this->basePath.DIRECTORY_SEPARATOR.'bootstrap/resources'.($path ? DIRECTORY_SEPARATOR.$path : $path);
+    }
+
+    public function environmentPath()
+    {
+        return $this->environmentPath = $this->basePath.DIRECTORY_SEPARATOR.'bootstrap';
     }
 
     public function getNamespace()
