@@ -2,7 +2,7 @@
 
 namespace DummyNamespace;
 
-use App\Models\BaseModel;
+use Ckryo\Framework\Models\BaseModel;
 
 class DummyClass extends BaseModel
 {

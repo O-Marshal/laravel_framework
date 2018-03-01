@@ -9,12 +9,27 @@ class Application extends LaravelApplication {
 
     public function path($path = '')
     {
-        return realpath(__DIR__ . '/../src').($path ? DIRECTORY_SEPARATOR.$path : $path);
+        return $this->basePath.DIRECTORY_SEPARATOR.'src'.($path ? DIRECTORY_SEPARATOR.$path : $path);
     }
 
     public function bootstrapPath($path = '')
     {
-        return $this->basePath.($path ? DIRECTORY_SEPARATOR.$path : $path);
+        return $this->basePath.DIRECTORY_SEPARATOR.'bootstrap'.($path ? DIRECTORY_SEPARATOR.$path : $path);
+    }
+
+    public function configPath($path = '')
+    {
+        return $this->basePath.DIRECTORY_SEPARATOR.'bootstrap/config'.($path ? DIRECTORY_SEPARATOR.$path : $path);
+    }
+
+    public function storagePath()
+    {
+        return $this->storagePath ?: $this->basePath.DIRECTORY_SEPARATOR.'bootstrap/storage';
+    }
+
+    public function resourcePath($path = '')
+    {
+        return $this->basePath.DIRECTORY_SEPARATOR.'bootstrap/resources'.($path ? DIRECTORY_SEPARATOR.$path : $path);
     }
 
     public function getNamespace()
@@ -23,12 +38,11 @@ class Application extends LaravelApplication {
             return $this->namespace;
         }
 
-        $composer = json_decode(file_get_contents(base_path('/../composer.json')), true);
+        $composer = json_decode(file_get_contents($this->basePath('composer.json')), true);
 
         foreach ((array) data_get($composer, 'autoload.psr-4') as $namespace => $path) {
             foreach ((array) $path as $pathChoice) {
-                dump(base_path());
-                if (realpath(app_path()) == realpath(__DIR__ . '/../'.$pathChoice)) {
+                if ($this->path('namespace') == $this->basePath($pathChoice.'namespace')) {
                     return $this->namespace = $namespace;
                 }
             }

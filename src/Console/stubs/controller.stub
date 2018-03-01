@@ -3,76 +3,28 @@
 namespace DummyNamespace;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller as BaseController;
+use Ckryo\Framework\Http\BaseController;
 
 class DummyClass extends BaseController
 {
-    /**
-     * http get::uri/create
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index() {
-        //
-    }
+    // http get::uri
+    public function index() {}
 
-    /**
-     * http get::uri/create
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create() {
-        //
-    }
+    // http get::uri/create
+    public function create() {}
 
-    /**
-     * http post::uri
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request) {
-        //
-    }
+    // http post::uri
+    public function store(Request $request) {}
 
-    /**
-     * http get::uri/id
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id) {
-        //
-    }
+    // http get::uri/id
+    public function show($id) {}
 
-    /**
-     * http get::uri/id
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id) {
-        //
-    }
+    // http get::uri/id
+    public function edit($id) {}
 
-    /**
-     * http put::uri/id
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id) {
-        //
-    }
+    // http put::uri/id
+    public function update(Request $request, $id) {}
 
-    /**
-     * http delete::uri/id
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id) {
-        //
-    }
+    // http delete::uri/id
+    public function destroy($id) {}
 }
