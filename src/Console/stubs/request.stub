@@ -2,7 +2,7 @@
 
 namespace DummyNamespace;
 
-use Ckryo\Framework\Models\Http\FormRequest;
+use Ckryo\Framework\Http\FormRequest;
 
 class DummyClass extends FormRequest
 {
