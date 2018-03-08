@@ -47,7 +47,7 @@ class Application extends LaravelApplication {
 
         foreach ((array) data_get($composer, 'autoload.psr-4') as $namespace => $path) {
             foreach ((array) $path as $pathChoice) {
-                if ($this->path('namespace') == $this->basePath($pathChoice.'namespace')) {
+                if ($this->path() === $this->basePath(substr($pathChoice, 0, -1))) {
                     return $this->namespace = $namespace;
                 }
             }
