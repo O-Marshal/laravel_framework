@@ -4,8 +4,7 @@ namespace DummyNamespace;
 
 use Closure;
 
-class DummyClass
-{
+class DummyClass {
     /**
      * Handle an incoming request.
      *

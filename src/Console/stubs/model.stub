@@ -4,8 +4,7 @@ namespace DummyNamespace;
 
 use Ckryo\Framework\Models\BaseModel;
 
-class DummyClass extends BaseModel
-{
+class DummyClass extends BaseModel {
 
     protected $table = 'DummyTableNameProperty';
 

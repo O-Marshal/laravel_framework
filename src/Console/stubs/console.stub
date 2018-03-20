@@ -4,8 +4,7 @@ namespace DummyNamespace;
 
 use Illuminate\Console\Command;
 
-class DummyClass extends Command
-{
+class DummyClass extends Command {
     /**
      * The name and signature of the console command.
      *

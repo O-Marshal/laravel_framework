@@ -4,8 +4,7 @@ namespace DummyNamespace;
 
 use Ckryo\Framework\Http\FormRequest;
 
-class DummyClass extends FormRequest
-{
+class DummyClass extends FormRequest {
     /**
      * 需要进行授权验证的方法，根据数组先后顺序依次执行.
      *

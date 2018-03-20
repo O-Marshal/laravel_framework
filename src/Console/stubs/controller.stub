@@ -5,8 +5,7 @@ namespace DummyNamespace;
 use Illuminate\Http\Request;
 use Ckryo\Framework\Http\BaseController;
 
-class DummyClass extends BaseController
-{
+class DummyClass extends BaseController {
     // http get::uri
     public function index() {}
 

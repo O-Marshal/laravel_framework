@@ -1,6 +1,6 @@
 <?php
 
-namespace Ckryo\Framework\Http\Requests;
+namespace Ckryo\Framework\Http;
 
 use Ckryo\Framework\Exceptions\MethodUndefinedException;
 use Illuminate\Foundation\Http\FormRequest as BaseFormRequest;
