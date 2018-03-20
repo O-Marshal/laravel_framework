@@ -32,20 +32,27 @@ class FormRequest extends BaseFormRequest
      */
     public function authorize()
     {
-        $route = $this->route();
+//        $route = $this->route();
+//
+//        $routeParams = $route->parametersWithoutNulls();
+//
+//        foreach ($this->authorizeMethods() as $method) {
+//            if ($this->authorizeResult) {
+//                $result = $this->callAction($method, $routeParams);
+//                $this->setAuthorizeResult($result);
+//            } else {
+//                break;
+//            }
+//        }
+//
+//        return $this->authorizeResult;
+    }
 
-        $routeParams = $route->parametersWithoutNulls();
-
-        foreach ($this->authorizeMethods() as $method) {
-            if ($this->authorizeResult) {
-                $result = $this->callAction($method, $routeParams);
-                $this->setAuthorizeResult($result);
-            } else {
-                break;
-            }
-        }
-
-        return $this->authorizeResult;
+    /**
+     * @return array
+     */
+    public function params() {
+        return [];
     }
 
     /**
