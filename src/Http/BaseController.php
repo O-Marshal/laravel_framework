@@ -8,5 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class BaseController extends Controller {
-    use JsonResponser, AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    use JsonResponseSupport, AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
 }
