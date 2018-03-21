@@ -2,12 +2,9 @@
 
 namespace Ckryo\Framework\Support;
 
-use Ckryo\Framework\Exceptions\InvalidArgumentException;
-use Illuminate\Database\Eloquent\Concerns\HasAttributes;
-
 trait EloquentMoneyDescriber {
 
-    use HasAttributes;
+    protected $attributes = [];
 
     protected $moneyAttributes = [
         'price', 'price_original'

@@ -3,11 +3,10 @@
 namespace Ckryo\Framework\Support;
 
 use Ckryo\Framework\Exceptions\InvalidArgumentException;
-use Illuminate\Database\Eloquent\Concerns\HasAttributes;
 
 trait EloquentCommonDescriber {
 
-    use HasAttributes;
+    protected $attributes = [];
 
     /**
      * @param $value
