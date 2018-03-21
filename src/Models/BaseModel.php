@@ -5,15 +5,14 @@ namespace Ckryo\Framework\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class BaseModel extends Model
-{
+class BaseModel extends Model {
 
     protected $guarded = [];
 
     public $timestamps = false;
 
     public function getForeignKey() {
-        $className = class_basename($this);
+        $className = Str::snake(class_basename($this));
         if (substr($className, -6) === '_model') {
             $className = substr($className, 0, -6);
         }
