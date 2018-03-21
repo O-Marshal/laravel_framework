@@ -49,6 +49,15 @@ class FormRequest extends BaseFormRequest
     }
 
     /**
+     * 判断需要 json 响应
+     *
+     * @return bool
+     */
+    public function jsonResponse() {
+        return $this->header('content-type') === 'application/json' || $this->ajax() || $this->has('json');
+    }
+
+    /**
      * @return array
      */
     public function params() {
