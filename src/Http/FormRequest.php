@@ -30,8 +30,8 @@ class FormRequest extends BaseFormRequest
      * @return bool
      * @throws MethodUndefinedException
      */
-    public function authorize()
-    {
+    public function authorize() {
+        return true;
 //        $route = $this->route();
 //
 //        $routeParams = $route->parametersWithoutNulls();
