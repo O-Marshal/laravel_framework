@@ -14,7 +14,7 @@ trait DataBaseModuleQuery {
 
     public abstract function setBaseModel(BaseModel $model);
 
-    public function find(array $where, $with = []) {
+    public function find($where, $with = []) {
         $model = $this->getModelQuery()->with($with)->where($where)->take(1)->first();
         $this->setBaseModel($model);
         return $this;
