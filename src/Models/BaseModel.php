@@ -8,7 +8,15 @@ use Illuminate\Support\Str;
 
 class BaseModel extends Model {
 
-    use CommonAttribue, FractionAttribue;
+    use FractionAttribue;
+
+    protected $guarded = [];
+
+    public $timestamps = false;
+
+    protected $casts = [
+        'detail_info' => 'array'
+    ];
 
     public function getForeignKey() {
         $className = Str::snake(class_basename($this));

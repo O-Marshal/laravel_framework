@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use Ckryo\Framework\Product;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 

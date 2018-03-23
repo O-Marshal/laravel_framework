@@ -6,7 +6,11 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 
 class BasePivot extends Pivot {
 
-    use CommonAttribue, FractionAttribue;
+    use FractionAttribue;
+
+    protected $guarded = [];
+
+    public $timestamps = false;
 
     public function setAttribute($key, $value) {
         if ($this->isFraction($key)) {
