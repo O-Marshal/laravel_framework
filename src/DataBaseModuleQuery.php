@@ -26,8 +26,8 @@ trait DataBaseModuleQuery {
         return $this;
     }
 
-    public function update($wheres, array $params) {
-        $this->getModelQuery()->where($wheres)->update($params);
+    public function update(array $params) {
+        $this->getBaseModel()->update($params);
         return $this;
     }
 

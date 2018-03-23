@@ -35,12 +35,12 @@ trait DataBaseModuleRelation {
         return $this;
     }
 
-    public function updateUnion(string $unionName, $where, array $unionParams) {
+    public function updateUnion(string $unionName, array $unionParams, $where = []) {
         $this->getModelRelation($unionName)->where($where)->update($unionParams);
         return $this;
     }
 
-    public function deleteUnion(string $unionName, $where) {
+    public function deleteUnion(string $unionName, $where = []) {
         $this->getModelRelation($unionName)->where($where)->delete();
         return $this;
     }
