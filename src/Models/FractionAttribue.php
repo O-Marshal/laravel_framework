@@ -8,7 +8,7 @@ trait FractionAttribue {
 
     protected $fractions = [];
 
-    private function isFraction($key) {
+    protected function isFraction($key) {
         return array_has($this->fractions, $key);
     }
 

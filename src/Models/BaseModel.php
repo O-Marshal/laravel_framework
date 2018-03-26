@@ -33,11 +33,14 @@ class BaseModel extends Model {
         return parent::setAttribute($key, $value);
     }
 
-    public function getAttribute($key) {
-        if ($this->isFraction($key)) {
-            return $this->fractionAttribueValue($key);
+    public function getArrayableItems(array $values) {
+        $items = parent::getArrayableItems($values);
+        foreach ($items as $key => $val) {
+            if ($this->isFraction($key)) {
+                $items[$key] = $this->fractionAttribueValue($key);
+            }
         }
-        return parent::getAttribute($key);
+        return $items;
     }
 
     /**
