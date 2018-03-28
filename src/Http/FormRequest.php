@@ -6,8 +6,7 @@ use Ckryo\Framework\Exceptions\MethodUndefinedException;
 use Illuminate\Foundation\Http\FormRequest as BaseFormRequest;
 use Illuminate\Routing\RouteDependencyResolverTrait;
 
-class FormRequest extends BaseFormRequest
-{
+class FormRequest extends BaseFormRequest {
 
     use RouteDependencyResolverTrait;
 
@@ -61,6 +60,10 @@ class FormRequest extends BaseFormRequest
      * @return array
      */
     public function params() {
+        return [];
+    }
+
+    public function rules() {
         return [];
     }
 
