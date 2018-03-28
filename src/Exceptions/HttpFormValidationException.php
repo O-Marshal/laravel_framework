@@ -4,7 +4,7 @@ namespace Ckryo\Framework\Exceptions;
 
 use Illuminate\Validation\ValidationException;
 
-class FormValidationException extends Exception {
+class HttpFormValidationException extends Exception {
 
     protected $code = 2;
 
