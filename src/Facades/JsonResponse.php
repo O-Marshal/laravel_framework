@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Facade;
 class JsonResponse extends Facade {
 
     public static function getFacadeRoot() {
-        return new JsonResponse();
+        return new \Ckryo\Framework\Http\JsonResponse();
     }
 
 }

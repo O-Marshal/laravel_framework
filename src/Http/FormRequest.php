@@ -56,13 +56,6 @@ class FormRequest extends BaseFormRequest {
         return $this->header('content-type') === 'application/json' || $this->ajax() || $this->has('json');
     }
 
-    /**
-     * @return array
-     */
-    public function params() {
-        return [];
-    }
-
     public function rules() {
         return [];
     }
